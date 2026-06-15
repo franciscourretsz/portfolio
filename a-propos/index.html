@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="À propos de Francisco Urrets Zavalia, architecte de systèmes d'acquisition." />
+  <title>À propos | Francisco Urrets Zavalia</title>
+  <link rel="icon" type="image/png" href="../favicon.png.png" />
+  <style>
+    :root{--ink:#07131f;--navy:#0b1f33;--cream:#f6f1e7;--paper:#fffdf8;--muted:#665f53;--gold:#b89b5e;--line:rgba(11,31,51,.14);--shadow:0 28px 70px rgba(7,19,31,.14)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}h1,h2,h3,.brand{font-family:Georgia,"Times New Roman",serif;font-weight:500}a{color:inherit}
+    header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(184,155,94,.28);background:rgba(246,241,231,.94);padding:18px 7vw;backdrop-filter:blur(18px)}
+    .brand{color:var(--navy);font-size:18px;text-decoration:none;white-space:nowrap}nav{display:flex;align-items:center;gap:20px}nav a{color:var(--navy);font-size:13px;font-weight:700;text-decoration:none}.language-switch{display:inline-flex;overflow:hidden;border:1px solid rgba(11,31,51,.18);border-radius:999px;background:rgba(255,253,248,.72)}.language-switch button{border:0;background:transparent;color:var(--navy);cursor:pointer;font-size:12px;font-weight:800;padding:8px 11px}.language-switch button.active{background:var(--navy);color:var(--paper)}
+    .section{max-width:1240px;margin:0 auto;padding:92px 7vw}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.7px;margin-bottom:18px;text-transform:uppercase}h1{max-width:900px;color:var(--navy);font-size:clamp(42px,5vw,70px);line-height:1.03;margin-bottom:22px}h2{color:var(--navy);font-size:clamp(32px,4vw,54px);line-height:1.06;margin-bottom:18px}h3{color:var(--navy);font-size:24px;line-height:1.15;margin-bottom:12px}p{color:var(--muted);font-size:17px}.lead{max-width:720px;color:#534d43;font-size:20px;margin-bottom:32px}
+    .hero{display:grid;grid-template-columns:minmax(0,.92fr) minmax(360px,.72fr);gap:56px;align-items:center;padding-top:64px}.photo{border:1px solid rgba(184,155,94,.48);background:linear-gradient(180deg,#fffaf0,#efe5d3);box-shadow:var(--shadow);overflow:hidden}.photo img{display:block;width:100%;height:620px;object-fit:contain;object-position:center bottom}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--navy);border-radius:3px;background:var(--navy);color:var(--paper);font-size:14px;font-weight:800;padding:16px 22px;text-decoration:none}.btn.secondary{background:transparent;color:var(--navy)}.actions{display:flex;flex-wrap:wrap;gap:12px}
+    .two-col{display:grid;grid-template-columns:minmax(0,.82fr) minmax(320px,.48fr);gap:52px;align-items:start}.panel{border:1px solid var(--line);background:var(--paper);padding:30px}.dark{background:var(--navy);border-color:rgba(184,155,94,.46)}.dark h3{color:var(--paper)}.dark p,.dark li{color:#d8d0c0}.list{display:grid;gap:14px;list-style:none;margin-top:20px}.list li{border-top:1px solid rgba(255,253,248,.16);padding-top:14px}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}.timeline article{background:var(--paper);padding:26px}.timeline strong{display:block;color:var(--gold);font-family:Georgia,"Times New Roman",serif;font-size:42px;font-weight:500;line-height:1;margin-bottom:12px}
+    .cta{background:var(--navy);text-align:center;max-width:none}.cta h2{color:var(--paper);margin-left:auto;margin-right:auto}.cta p{max-width:720px;margin:0 auto 28px;color:#d9d2c3}.cta .actions{justify-content:center}.cta .btn{border-color:var(--gold);background:var(--gold);color:var(--ink)}.cta .btn.secondary{background:transparent;color:var(--paper)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}footer{border-top:1px solid rgba(184,155,94,.28);color:var(--muted);font-size:13px;padding:30px 7vw;text-align:center}[data-lang=en]{display:none}body.lang-en [data-lang=fr]{display:none}body.lang-en [data-lang=en]{display:revert}
+    @media(max-width:1050px){header{align-items:flex-start;flex-direction:column}nav{flex-wrap:wrap}.hero,.two-col{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.photo img{height:620px}}@media(max-width:720px){header{padding:14px 18px}.section{padding:68px 20px}h1{font-size:42px}h2{font-size:34px}.btn{width:100%}.timeline{grid-template-columns:1fr}.photo img{height:520px}}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../">Francisco Urrets Zavalia</a>
+    <nav>
+      <a href="../#probleme" data-fr="Problème" data-en="Problem">Problème</a>
+      <a href="../#systeme" data-fr="Système" data-en="System">Système</a>
+      <a href="../#resultats" data-fr="Résultats" data-en="Results">Résultats</a>
+      <a href="./" data-fr="À propos" data-en="About">À propos</a>
+      <a href="../#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      <span class="language-switch"><button class="active" data-set-lang="fr">FR</button><button data-set-lang="en">EN</button></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="reveal">
+        <div class="eyebrow" data-lang="fr">À propos</div>
+        <div class="eyebrow" data-lang="en">About</div>
+        <h1 data-lang="fr">Une vision internationale, une approche humaine, un objectif simple.</h1>
+        <h1 data-lang="en">An international perspective, a human approach, one simple objective.</h1>
+        <p class="lead" data-lang="fr">Né en Argentine, formé par plusieurs marchés, j'aide les entreprises de services à créer plus de liberté grâce à une acquisition plus prévisible.</p>
+        <p class="lead" data-lang="en">Born in Argentina and shaped by several markets, I help service businesses create more freedom through more predictable acquisition.</p>
+        <div class="actions">
+          <a class="btn" href="https://calendly.com/franciscourretsz/30min" target="_blank" rel="noopener" data-fr="Demander un diagnostic privé" data-en="Request a private diagnostic">Demander un diagnostic privé</a>
+          <a class="btn secondary" href="../#resultats" data-fr="Voir les résultats" data-en="View results">Voir les résultats</a>
+        </div>
+      </div>
+      <figure class="photo reveal">
+        <img src="../francisco-speaking.png" alt="Francisco Urrets Zavalia" />
+      </figure>
+    </section>
+
+    <section class="section two-col reveal">
+      <div>
+        <div class="eyebrow" data-lang="fr">Parcours</div>
+        <div class="eyebrow" data-lang="en">Path</div>
+        <h2 data-lang="fr">Je ne regarde pas l'acquisition comme une simple question de publicité.</h2>
+        <h2 data-lang="en">I do not look at acquisition as a simple advertising problem.</h2>
+        <p data-lang="fr">J'ai vécu en Argentine, au Mexique, en France, en Suisse et en Allemagne. Ce parcours m'a donné une conviction: une entreprise peut être excellente dans son métier et pourtant rester invisible pour les bons clients.</p>
+        <p data-lang="en">I have lived in Argentina, Mexico, France, Switzerland and Germany. That path gave me one conviction: a company can be excellent at what it does and still remain invisible to the right clients.</p>
+        <br />
+        <p data-lang="fr">Mon rôle est d'apporter une structure sérieuse, mais aussi une présence humaine. Je travaille avec des personnes, pas avec des tableaux abstraits.</p>
+        <p data-lang="en">My role is to bring serious structure, but also human presence. I work with people, not abstract dashboards.</p>
+      </div>
+      <aside class="panel dark">
+        <h3 data-lang="fr">Ce que cette vision apporte</h3>
+        <h3 data-lang="en">What this perspective brings</h3>
+        <ul class="list">
+          <li data-lang="fr">Une lecture plus globale des marchés et des comportements d'achat.</li>
+          <li data-lang="en">A broader reading of markets and buying behaviour.</li>
+          <li data-lang="fr">Une capacité à adapter le message sans perdre le positionnement premium.</li>
+          <li data-lang="en">The ability to adapt the message without losing premium positioning.</li>
+          <li data-lang="fr">Une obsession pour les systèmes simples, mesurables et commercialement utiles.</li>
+          <li data-lang="en">An obsession with simple, measurable systems that are commercially useful.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section reveal">
+      <div class="timeline">
+        <article><strong>+15</strong><h3 data-lang="fr">clients accompagnés</h3><h3 data-lang="en">clients supported</h3><p data-lang="fr">Services, architecture, branding, coaching et projets commerciaux.</p><p data-lang="en">Services, architecture, branding, coaching and commercial projects.</p></article>
+        <article><strong>7</strong><h3 data-lang="fr">marchés clients</h3><h3 data-lang="en">client markets</h3><p data-lang="fr">Argentine, Chili, France, États-Unis, Mexique, Allemagne et Italie.</p><p data-lang="en">Argentina, Chile, France, the United States, Mexico, Germany and Italy.</p></article>
+        <article><strong>5</strong><h3 data-lang="fr">pays vécus</h3><h3 data-lang="en">countries lived in</h3><p data-lang="fr">Un parcours qui aide à comprendre les nuances culturelles et commerciales.</p><p data-lang="en">A path that helps me understand cultural and commercial nuance.</p></article>
+        <article><strong>3</strong><h3 data-lang="fr">ans de focus</h3><h3 data-lang="en">years of focus</h3><p data-lang="fr">Sur les systèmes d'acquisition, la stratégie et la conversion de services.</p><p data-lang="en">On acquisition systems, strategy and service conversion.</p></article>
+      </div>
+    </section>
+
+    <section class="section two-col reveal">
+      <div>
+        <div class="eyebrow" data-lang="fr">Pourquoi ce travail</div>
+        <div class="eyebrow" data-lang="en">Why this work</div>
+        <h2 data-lang="fr">Sans ventes, il n'y a pas de vraie liberté.</h2>
+        <h2 data-lang="en">Without sales, there is no real freedom.</h2>
+        <p data-lang="fr">Pour moi, l'acquisition n'est pas seulement une mécanique commerciale. C'est une manière de donner plus de contrôle à une entreprise: moins dépendre du hasard, mieux choisir ses opportunités, construire une trajectoire plus libre.</p>
+        <p data-lang="en">For me, acquisition is not only a commercial mechanism. It is a way to give a business more control: depend less on chance, choose opportunities better and build a freer path.</p>
+      </div>
+      <aside class="panel">
+        <h3 data-lang="fr">Ce que vous devez ressentir</h3>
+        <h3 data-lang="en">What you should feel</h3>
+        <p data-lang="fr">Que vous parlez avec quelqu'un de sérieux, mais humain. Quelqu'un qui sait structurer, mesurer et avancer sans rendre le marketing plus compliqué qu'il ne doit l'être.</p>
+        <p data-lang="en">That you are speaking with someone serious, but human. Someone who knows how to structure, measure and move forward without making marketing more complicated than it needs to be.</p>
+      </aside>
+    </section>
+
+    <section class="section cta">
+      <div class="reveal">
+        <div class="eyebrow" data-lang="fr">Diagnostic privé</div>
+        <div class="eyebrow" data-lang="en">Private diagnostic</div>
+        <h2 data-lang="fr">Si vous voulez rendre votre acquisition plus prévisible, commençons par comprendre le système actuel.</h2>
+        <h2 data-lang="en">If you want to make acquisition more predictable, let us start by understanding the current system.</h2>
+        <p data-lang="fr">Je regarderai votre situation, vos leviers actuels et les opportunités d'amélioration.</p>
+        <p data-lang="en">I will review your situation, current levers and improvement opportunities.</p>
+        <div class="actions">
+          <a class="btn" href="https://calendly.com/franciscourretsz/30min" target="_blank" rel="noopener" data-fr="Réserver le diagnostic" data-en="Book the diagnostic">Réserver le diagnostic</a>
+          <a class="btn secondary" href="mailto:contact@franciscourrets.com">Email</a>
+          <a class="btn secondary" href="https://wa.me/4915215119970" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Francisco Urrets Zavalia. Tous droits réservés.</footer>
+
+  <script>
+    const buttons=document.querySelectorAll("[data-set-lang]"),translated=document.querySelectorAll("[data-fr][data-en]"),html=document.documentElement,savedLanguage=localStorage.getItem("site-language")||"fr";
+    function setLanguage(lang){document.body.classList.toggle("lang-en",lang==="en");html.lang=lang;localStorage.setItem("site-language",lang);buttons.forEach(b=>b.classList.toggle("active",b.dataset.setLang===lang));translated.forEach(n=>{n.textContent=n.dataset[lang]})}
+    buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.setLang)));setLanguage(savedLanguage);
+    const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");revealObserver.unobserve(entry.target)}})},{threshold:.16});
+    document.querySelectorAll(".reveal").forEach(node=>revealObserver.observe(node));
+  </script>
+</body>
+</html>

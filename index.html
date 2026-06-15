@@ -5,724 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Systèmes prévisibles d'acquisition de clients pour cabinets d'architecture et entreprises de services premium." />
   <title>Systèmes d'acquisition | Francisco Urrets Zavalia</title>
-  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f6f1e7"/><circle cx="50" cy="50" r="38" fill="none" stroke="%23b89b5e" stroke-width="2"/><text x="50" y="60" text-anchor="middle" font-family="Georgia" font-size="34" fill="%230b1f33">FU</text></svg>' />
+  <link rel="icon" type="image/png" href="favicon.png.png" />
 
   <style>
-    :root {
-      --ink: #07131f;
-      --navy: #0b1f33;
-      --cream: #f6f1e7;
-      --paper: #fffdf8;
-      --muted: #665f53;
-      --gold: #b89b5e;
-      --gold-soft: rgba(184, 155, 94, 0.16);
-      --line: rgba(11, 31, 51, 0.14);
-      --light-line: rgba(255, 253, 248, 0.18);
-      --shadow: 0 28px 70px rgba(7, 19, 31, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.55;
-    }
-
-    h1,
-    h2,
-    h3,
-    .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      letter-spacing: 0;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid rgba(184, 155, 94, 0.28);
-      background: rgba(246, 241, 231, 0.92);
-      padding: 18px 7vw;
-      backdrop-filter: blur(18px);
-      transition: padding 220ms ease, box-shadow 220ms ease, background 220ms ease;
-    }
-
-    header.scrolled {
-      background: rgba(246, 241, 231, 0.98);
-      box-shadow: 0 12px 36px rgba(7, 19, 31, 0.08);
-      padding-top: 13px;
-      padding-bottom: 13px;
-    }
-
-    .brand {
-      color: var(--navy);
-      font-size: 18px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--navy);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .language-switch {
-      display: inline-flex;
-      overflow: hidden;
-      border: 1px solid rgba(11, 31, 51, 0.18);
-      border-radius: 999px;
-      background: rgba(255, 253, 248, 0.72);
-    }
-
-    .language-switch button {
-      border: 0;
-      background: transparent;
-      color: var(--navy);
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 800;
-      padding: 8px 11px;
-    }
-
-    .language-switch button.active {
-      background: var(--navy);
-      color: var(--paper);
-    }
-
-    .section {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 92px 7vw;
-    }
-
-    .section.full {
-      max-width: none;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.7px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 900px;
-      color: var(--navy);
-      font-size: clamp(42px, 4.6vw, 64px);
-      line-height: 1.03;
-      margin-bottom: 22px;
-    }
-
-    h2 {
-      color: var(--navy);
-      font-size: clamp(32px, 4vw, 54px);
-      line-height: 1.06;
-      margin-bottom: 18px;
-      max-width: 900px;
-    }
-
-    h3 {
-      color: var(--navy);
-      font-size: 24px;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .lead {
-      max-width: 700px;
-      color: #534d43;
-      font-size: 20px;
-      margin-bottom: 32px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(360px, 0.82fr);
-      gap: 48px;
-      align-items: center;
-      min-height: calc(100vh - 70px);
-      padding-top: 42px;
-      padding-bottom: 52px;
-    }
-
-    .hero-actions,
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      border: 1px solid var(--navy);
-      border-radius: 3px;
-      background: var(--navy);
-      color: var(--paper);
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1;
-      padding: 16px 22px;
-      text-decoration: none;
-      transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--ink);
-      box-shadow: 0 14px 32px rgba(184, 155, 94, 0.24);
-      transform: translateY(-1px);
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: var(--navy);
-    }
-
-    .btn.secondary:hover {
-      background: var(--navy);
-      color: var(--paper);
-    }
-
-    .capacity {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .capacity::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px var(--gold-soft);
-    }
-
-    .portrait-wrap {
-      position: relative;
-      border: 1px solid rgba(184, 155, 94, 0.48);
-      background: linear-gradient(180deg, #fffaf0 0%, #efe5d3 100%);
-      box-shadow: var(--shadow);
-      min-height: 540px;
-      overflow: hidden;
-    }
-
-    .portrait-wrap img {
-      display: block;
-      width: 100%;
-      height: 540px;
-      object-fit: contain;
-      object-position: center bottom;
-    }
-
-    .proof-strip,
-    .logo-strip {
-      display: grid;
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .proof-strip {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 40px;
-    }
-
-    .proof-item,
-    .logo-item {
-      background: rgba(255, 253, 248, 0.82);
-      padding: 22px;
-    }
-
-    .proof-item strong {
-      display: block;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      font-weight: 500;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .proof-item span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .logo-strip {
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 36px;
-    }
-
-    .logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 118px;
-    }
-
-    .logo-word {
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      line-height: 1;
-      opacity: 0.72;
-      text-align: center;
-    }
-
-    .intro-grid,
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.48fr);
-      gap: 52px;
-      align-items: start;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      padding: 30px;
-    }
-
-    .panel.dark-panel {
-      background: var(--navy);
-      border-color: rgba(184, 155, 94, 0.46);
-    }
-
-    .panel.dark-panel h3 {
-      color: var(--paper);
-    }
-
-    .panel.dark-panel p,
-    .panel.dark-panel li {
-      color: #d8d0c0;
-    }
-
-    .list {
-      display: grid;
-      gap: 14px;
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .list li {
-      border-top: 1px solid rgba(11, 31, 51, 0.12);
-      color: var(--muted);
-      font-size: 16px;
-      padding-top: 14px;
-    }
-
-    .dark-band {
-      background: var(--ink);
-      color: var(--paper);
-      overflow: hidden;
-    }
-
-    .dark-band h2,
-    .dark-band h3 {
-      color: var(--paper);
-    }
-
-    .dark-band p {
-      color: #d9d2c3;
-    }
-
-    .system-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 38px;
-    }
-
-    .system-card {
-      border: 1px solid var(--light-line);
-      background: rgba(255, 253, 248, 0.04);
-      padding: 26px;
-      min-height: 235px;
-      transition: background 220ms ease, transform 220ms ease, border-color 220ms ease;
-    }
-
-    .system-card:hover,
-    .case:hover {
-      transform: translateY(-3px);
-    }
-
-    .system-card:hover {
-      background: rgba(255, 253, 248, 0.075);
-      border-color: rgba(184, 155, 94, 0.4);
-    }
-
-    .system-card span,
-    .case-label {
-      display: inline-block;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-
-    .case {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      margin-top: 26px;
-      padding: 34px;
-      transition: transform 220ms ease, box-shadow 220ms ease;
-    }
-
-    .case:hover {
-      box-shadow: 0 24px 55px rgba(7, 19, 31, 0.08);
-    }
-
-    .case-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(290px, 0.55fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .stat {
-      border: 1px solid rgba(184, 155, 94, 0.28);
-      background: var(--cream);
-      padding: 20px;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      font-weight: 500;
-      line-height: 1;
-      margin-bottom: 7px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .calculator {
-      display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(320px, 0.52fr);
-      gap: 34px;
-      align-items: stretch;
-      margin-top: 34px;
-    }
-
-    .calc-form {
-      display: grid;
-      gap: 18px;
-    }
-
-    label {
-      color: var(--navy);
-      display: grid;
-      font-size: 14px;
-      font-weight: 800;
-      gap: 8px;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid rgba(11, 31, 51, 0.2);
-      border-radius: 3px;
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-      padding: 14px;
-    }
-
-    .calc-result {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border: 1px solid rgba(184, 155, 94, 0.46);
-      background: var(--navy);
-      padding: 32px;
-    }
-
-    .calc-result p {
-      color: #d9d2c3;
-      margin-bottom: 12px;
-    }
-
-    .calc-result strong {
-      color: var(--paper);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(36px, 5vw, 62px);
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.52fr);
-      gap: 52px;
-      align-items: stretch;
-    }
-
-    .about-card {
-      background: var(--navy);
-      border: 1px solid rgba(184, 155, 94, 0.45);
-      padding: 34px;
-    }
-
-    .about-card h3 {
-      color: var(--paper);
-    }
-
-    .about-card p,
-    .about-card li {
-      color: #d9d2c3;
-    }
-
-    .journey {
-      display: grid;
-      gap: 1px;
-      background: rgba(255, 253, 248, 0.16);
-      border: 1px solid rgba(255, 253, 248, 0.16);
-      margin-top: 24px;
-    }
-
-    .journey span {
-      color: var(--paper);
-      padding: 13px 0;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .cta {
-      background: var(--navy);
-      color: var(--paper);
-      text-align: center;
-    }
-
-    .cta h2 {
-      color: var(--paper);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 28px;
-      color: #d9d2c3;
-      font-size: 18px;
-    }
-
-    .cta .contact-actions {
-      justify-content: center;
-    }
-
-    .cta .btn {
-      border-color: var(--gold);
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    .cta .btn.secondary {
-      background: transparent;
-      color: var(--paper);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 700ms ease, transform 700ms ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      border-top: 1px solid rgba(184, 155, 94, 0.28);
-      color: var(--muted);
-      font-size: 13px;
-      padding: 30px 7vw;
-      text-align: center;
-    }
-
-    [data-lang="en"] {
-      display: none;
-    }
-
-    body.lang-en [data-lang="fr"] {
-      display: none;
-    }
-
-    body.lang-en [data-lang="en"] {
-      display: revert;
-    }
-
-    @media (max-width: 1050px) {
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      nav {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-
-      .hero,
-      .intro-grid,
-      .two-col,
-      .calculator,
-      .case-head,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 0;
-      }
-
-      .portrait-wrap,
-      .portrait-wrap img {
-        min-height: 0;
-        height: 620px;
-      }
-
-      .system-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-      header {
-        padding: 14px 18px;
-      }
-
-      .brand {
-        font-size: 17px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      .language-switch {
-        margin-left: auto;
-      }
-
-      .section {
-        padding: 68px 20px;
-      }
-
-      .hero {
-        padding-top: 40px;
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      h2 {
-        font-size: 34px;
-      }
-
-      .lead {
-        font-size: 18px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .portrait-wrap,
-      .portrait-wrap img {
-        height: 520px;
-      }
-
-      .proof-strip,
-      .logo-strip,
-      .system-grid,
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .panel,
-      .case,
-      .system-card,
-      .calc-result,
-      .about-card {
-        padding: 24px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 1ms !important;
-        scroll-behavior: auto !important;
-        transition-duration: 1ms !important;
-      }
-    }
+    :root{--ink:#07131f;--navy:#0b1f33;--cream:#f6f1e7;--paper:#fffdf8;--muted:#665f53;--gold:#b89b5e;--gold-soft:rgba(184,155,94,.16);--line:rgba(11,31,51,.14);--light-line:rgba(255,253,248,.18);--shadow:0 28px 70px rgba(7,19,31,.14)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}h1,h2,h3,.brand{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:0}a{color:inherit}img{max-width:100%}
+    header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(184,155,94,.28);background:rgba(246,241,231,.92);padding:18px 7vw;backdrop-filter:blur(18px);transition:padding .22s ease,box-shadow .22s ease,background .22s ease}
+    header.scrolled{background:rgba(246,241,231,.98);box-shadow:0 12px 36px rgba(7,19,31,.08);padding-top:13px;padding-bottom:13px}.brand{color:var(--navy);font-size:18px;text-decoration:none;white-space:nowrap}nav{display:flex;align-items:center;gap:20px}nav a{color:var(--navy);font-size:13px;font-weight:700;text-decoration:none}
+    .language-switch{display:inline-flex;overflow:hidden;border:1px solid rgba(11,31,51,.18);border-radius:999px;background:rgba(255,253,248,.72)}.language-switch button{border:0;background:transparent;color:var(--navy);cursor:pointer;font-size:12px;font-weight:800;padding:8px 11px}.language-switch button.active{background:var(--navy);color:var(--paper)}
+    .section{max-width:1240px;margin:0 auto;padding:92px 7vw}.section.full{max-width:none}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.7px;margin-bottom:18px;text-transform:uppercase}
+    h1{max-width:900px;color:var(--navy);font-size:clamp(42px,4.6vw,64px);line-height:1.03;margin-bottom:22px}h2{color:var(--navy);font-size:clamp(32px,4vw,54px);line-height:1.06;margin-bottom:18px;max-width:900px}h3{color:var(--navy);font-size:24px;line-height:1.15;margin-bottom:12px}p{color:var(--muted);font-size:17px}.lead{max-width:700px;color:#534d43;font-size:20px;margin-bottom:32px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);gap:48px;align-items:center;min-height:calc(100vh - 70px);padding-top:42px;padding-bottom:52px}.hero-actions,.contact-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--navy);border-radius:3px;background:var(--navy);color:var(--paper);font-size:14px;font-weight:800;line-height:1;padding:16px 22px;text-decoration:none;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease}.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);box-shadow:0 14px 32px rgba(184,155,94,.24);transform:translateY(-1px)}.btn.secondary{background:transparent;color:var(--navy)}.btn.secondary:hover{background:var(--navy);color:var(--paper)}
+    .capacity{display:inline-flex;align-items:center;gap:9px;margin-top:24px;color:var(--muted);font-size:14px;font-weight:700}.capacity:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px var(--gold-soft)}
+    .portrait-wrap{position:relative;border:1px solid rgba(184,155,94,.48);background:linear-gradient(180deg,#fffaf0 0%,#efe5d3 100%);box-shadow:var(--shadow);min-height:540px;overflow:hidden}.portrait-wrap img{display:block;width:100%;height:540px;object-fit:contain;object-position:center bottom}
+    .proof-strip,.logo-strip{display:grid;gap:1px;border:1px solid var(--line);background:var(--line)}.proof-strip{grid-template-columns:repeat(3,1fr);margin-top:40px}.proof-item,.logo-item{background:rgba(255,253,248,.82);padding:22px}.proof-item strong{display:block;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:28px;font-weight:500;line-height:1;margin-bottom:8px}.proof-item span{color:var(--muted);font-size:13px;font-weight:700}
+    .logo-strip{grid-template-columns:repeat(4,1fr);margin-top:36px}.logo-item{display:flex;align-items:center;justify-content:center;min-height:118px}.logo-word{color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:22px;line-height:1;opacity:.72;text-align:center}
+    .intro-grid,.two-col{display:grid;grid-template-columns:minmax(0,.82fr) minmax(320px,.48fr);gap:52px;align-items:start}.panel{border:1px solid var(--line);background:var(--paper);padding:30px}.panel.dark-panel{background:var(--navy);border-color:rgba(184,155,94,.46)}.panel.dark-panel h3{color:var(--paper)}.panel.dark-panel p,.panel.dark-panel li{color:#d8d0c0}.list{display:grid;gap:14px;list-style:none;margin-top:20px}.list li{border-top:1px solid rgba(11,31,51,.12);color:var(--muted);font-size:16px;padding-top:14px}
+    .dark-band{background:var(--ink);color:var(--paper);overflow:hidden}.dark-band h2,.dark-band h3{color:var(--paper)}.dark-band p{color:#d9d2c3}.system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}.system-card{border:1px solid var(--light-line);background:rgba(255,253,248,.04);padding:26px;min-height:235px;transition:background .22s ease,transform .22s ease,border-color .22s ease}.system-card:hover,.case:hover{transform:translateY(-3px)}.system-card:hover{background:rgba(255,253,248,.075);border-color:rgba(184,155,94,.4)}.system-card span,.case-label{display:inline-block;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.4px;margin-bottom:16px;text-transform:uppercase}
+    .case{border:1px solid var(--line);background:var(--paper);margin-top:26px;padding:34px;transition:transform .22s ease,box-shadow .22s ease}.case:hover{box-shadow:0 24px 55px rgba(7,19,31,.08)}.case-head{display:grid;grid-template-columns:minmax(0,.95fr) minmax(290px,.55fr);gap:34px;align-items:start}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{border:1px solid rgba(184,155,94,.28);background:var(--cream);padding:20px}.stat strong{display:block;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:34px;font-weight:500;line-height:1;margin-bottom:7px}.stat span{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase}
+    .calculator{display:grid;grid-template-columns:minmax(0,.78fr) minmax(320px,.52fr);gap:34px;align-items:stretch;margin-top:34px}.calc-form{display:grid;gap:18px}label{color:var(--navy);display:grid;font-size:14px;font-weight:800;gap:8px}input{width:100%;border:1px solid rgba(11,31,51,.2);border-radius:3px;background:#fff;color:var(--ink);font:inherit;padding:14px}.calc-result{display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(184,155,94,.46);background:var(--navy);padding:32px}.calc-result p{color:#d9d2c3;margin-bottom:12px}.calc-result strong{color:var(--paper);font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,5vw,62px);font-weight:500;line-height:1}
+    .cta{background:var(--navy);color:var(--paper);text-align:center}.cta h2{color:var(--paper);margin-left:auto;margin-right:auto}.cta p{max-width:720px;margin:0 auto 28px;color:#d9d2c3;font-size:18px}.cta .contact-actions{justify-content:center}.cta .btn{border-color:var(--gold);background:var(--gold);color:var(--ink)}.cta .btn.secondary{background:transparent;color:var(--paper)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}footer{border-top:1px solid rgba(184,155,94,.28);color:var(--muted);font-size:13px;padding:30px 7vw;text-align:center}
+    [data-lang=en]{display:none}body.lang-en [data-lang=fr]{display:none}body.lang-en [data-lang=en]{display:revert}
+    @media(max-width:1050px){header{align-items:flex-start;flex-direction:column;gap:14px}nav{width:100%;flex-wrap:wrap;gap:14px}.hero,.intro-grid,.two-col,.calculator,.case-head{grid-template-columns:1fr}.hero{min-height:0}.portrait-wrap,.portrait-wrap img{min-height:0;height:620px}.system-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){header{padding:14px 18px}.brand{font-size:17px}nav a{font-size:12px}.language-switch{margin-left:auto}.section{padding:68px 20px}.hero{padding-top:40px}h1{font-size:42px}h2{font-size:34px}.lead{font-size:18px}.btn{width:100%}.portrait-wrap,.portrait-wrap img{height:520px}.proof-strip,.logo-strip,.system-grid,.stats{grid-template-columns:1fr}.panel,.case,.system-card,.calc-result{padding:24px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:1ms!important;scroll-behavior:auto!important;transition-duration:1ms!important}}
   </style>
 </head>
 
@@ -734,7 +40,7 @@
       <a href="#systeme" data-fr="Système" data-en="System">Système</a>
       <a href="#resultats" data-fr="Résultats" data-en="Results">Résultats</a>
       <a href="#diagnostic" data-fr="Diagnostic" data-en="Diagnostic">Diagnostic</a>
-      <a href="#a-propos" data-fr="À propos" data-en="About">À propos</a>
+      <a href="a-propos/" data-fr="À propos" data-en="About">À propos</a>
       <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
       <span class="language-switch" aria-label="Language selector">
         <button type="button" class="active" data-set-lang="fr">FR</button>
@@ -788,10 +94,8 @@
       <div>
         <div class="eyebrow" data-lang="fr">Le problème</div>
         <div class="eyebrow" data-lang="en">The problem</div>
-
         <h2 data-lang="fr">Votre travail peut être excellent. Votre acquisition peut rester imprévisible.</h2>
         <h2 data-lang="en">Your work can be excellent. Your acquisition can still be unpredictable.</h2>
-
         <p data-lang="fr">Les recommandations sont précieuses, mais elles arrivent quand elles arrivent. Pour un cabinet ou une entreprise de services à forte valeur, cette dépendance crée un coût invisible: les bons clients ne vous découvrent pas au bon moment.</p>
         <p data-lang="en">Referrals are valuable, but they arrive when they arrive. For a studio or high-value service company, that dependency creates an invisible cost: the right clients do not discover you at the right time.</p>
       </div>
@@ -814,45 +118,16 @@
       <div class="section reveal">
         <div class="eyebrow" data-lang="fr">Le système</div>
         <div class="eyebrow" data-lang="en">The system</div>
-
         <h2 data-lang="fr">Une architecture d'acquisition, pas une collection d'actions marketing.</h2>
         <h2 data-lang="en">An acquisition architecture, not a collection of marketing activities.</h2>
-
         <p data-lang="fr">Le but n'est pas de faire plus de bruit. Le but est de concevoir un chemin clair entre une personne qui ne vous connaît pas encore et une demande qualifiée avec un vrai potentiel commercial.</p>
         <p data-lang="en">The goal is not to make more noise. The goal is to design a clear path between someone who does not know you yet and a qualified enquiry with real commercial potential.</p>
 
         <div class="system-grid">
-          <article class="system-card">
-            <span>01</span>
-            <h3 data-lang="fr">Positionnement</h3>
-            <h3 data-lang="en">Positioning</h3>
-            <p data-lang="fr">Clarifier l'offre, le client idéal, les objections et la valeur économique du problème.</p>
-            <p data-lang="en">Clarify the offer, ideal client, objections and economic value of the problem.</p>
-          </article>
-
-          <article class="system-card">
-            <span>02</span>
-            <h3 data-lang="fr">Message</h3>
-            <h3 data-lang="en">Message</h3>
-            <p data-lang="fr">Transformer votre expertise en angles simples, crédibles et compréhensibles par un décideur.</p>
-            <p data-lang="en">Turn your expertise into simple, credible angles a decision-maker can understand.</p>
-          </article>
-
-          <article class="system-card">
-            <span>03</span>
-            <h3 data-lang="fr">Acquisition</h3>
-            <h3 data-lang="en">Acquisition</h3>
-            <p data-lang="fr">Créer les canaux, pages et mécanismes qui amènent les bons prospects vers une conversation.</p>
-            <p data-lang="en">Build the channels, pages and mechanisms that move the right prospects into a conversation.</p>
-          </article>
-
-          <article class="system-card">
-            <span>04</span>
-            <h3 data-lang="fr">Pilotage</h3>
-            <h3 data-lang="en">Management</h3>
-            <p data-lang="fr">Mesurer, interpréter, optimiser et décider avec des données, pas avec des impressions.</p>
-            <p data-lang="en">Measure, interpret, optimise and decide with data, not with impressions.</p>
-          </article>
+          <article class="system-card"><span>01</span><h3 data-lang="fr">Positionnement</h3><h3 data-lang="en">Positioning</h3><p data-lang="fr">Clarifier l'offre, le client idéal, les objections et la valeur économique du problème.</p><p data-lang="en">Clarify the offer, ideal client, objections and economic value of the problem.</p></article>
+          <article class="system-card"><span>02</span><h3 data-lang="fr">Message</h3><h3 data-lang="en">Message</h3><p data-lang="fr">Transformer votre expertise en angles simples, crédibles et compréhensibles par un décideur.</p><p data-lang="en">Turn your expertise into simple, credible angles a decision-maker can understand.</p></article>
+          <article class="system-card"><span>03</span><h3 data-lang="fr">Acquisition</h3><h3 data-lang="en">Acquisition</h3><p data-lang="fr">Créer les canaux, pages et mécanismes qui amènent les bons prospects vers une conversation.</p><p data-lang="en">Build the channels, pages and mechanisms that move the right prospects into a conversation.</p></article>
+          <article class="system-card"><span>04</span><h3 data-lang="fr">Pilotage</h3><h3 data-lang="en">Management</h3><p data-lang="fr">Mesurer, interpréter, optimiser et décider avec des données, pas avec des impressions.</p><p data-lang="en">Measure, interpret, optimise and decide with data, not with impressions.</p></article>
         </div>
       </div>
     </section>
@@ -860,7 +135,6 @@
     <section class="section reveal">
       <div class="eyebrow" data-lang="fr">Collaborations sélectionnées</div>
       <div class="eyebrow" data-lang="en">Selected collaborations</div>
-
       <h2 data-lang="fr">Des projets construits avec des marques de services, d'architecture et de design.</h2>
       <h2 data-lang="en">Work built with service, architecture and design brands.</h2>
 
@@ -875,7 +149,6 @@
     <section class="section" id="resultats">
       <div class="eyebrow reveal" data-lang="fr">Résultats sélectionnés</div>
       <div class="eyebrow reveal" data-lang="en">Selected results</div>
-
       <h2 class="reveal" data-lang="fr">Des systèmes simples, des résultats mesurables, une lecture honnête.</h2>
       <h2 class="reveal" data-lang="en">Simple systems, measurable results, honest interpretation.</h2>
 
@@ -885,28 +158,15 @@
             <span class="case-label">ARP</span>
             <h3 data-lang="fr">Studio d'architecture présent en Argentine, Chili, Espagne et États-Unis</h3>
             <h3 data-lang="en">Architecture studio active in Argentina, Chile, Spain and the United States</h3>
-
             <p data-lang="fr">Construction d'un système commercial capable de générer du volume depuis les réseaux sociaux et les messages directs, dans un secteur où la publicité est souvent perçue comme peu adaptée aux services à forte valeur.</p>
             <p data-lang="en">Commercial system built to generate volume from social channels and direct messages, in an industry where advertising is often seen as unsuitable for high-value services.</p>
           </div>
 
           <div class="stats">
-            <div class="stat">
-              <strong data-count="202">202</strong>
-              <span data-fr="conversations en mars" data-en="March conversations">conversations en mars</span>
-            </div>
-            <div class="stat">
-              <strong>+65%</strong>
-              <span data-fr="demandes qualifiées" data-en="qualified enquiries">demandes qualifiées</span>
-            </div>
-            <div class="stat">
-              <strong>668 €</strong>
-              <span data-fr="budget mensuel analysé" data-en="monthly budget analysed">budget mensuel analysé</span>
-            </div>
-            <div class="stat">
-              <strong>8 000 €</strong>
-              <span data-fr="vente attribuée" data-en="attributed sale">vente attribuée</span>
-            </div>
+            <div class="stat"><strong data-count="202">202</strong><span data-fr="conversations en mars" data-en="March conversations">conversations en mars</span></div>
+            <div class="stat"><strong>+65%</strong><span data-fr="demandes qualifiées" data-en="qualified enquiries">demandes qualifiées</span></div>
+            <div class="stat"><strong>668 €</strong><span data-fr="budget mensuel analysé" data-en="monthly budget analysed">budget mensuel analysé</span></div>
+            <div class="stat"><strong>8 000 €</strong><span data-fr="vente attribuée" data-en="attributed sale">vente attribuée</span></div>
           </div>
         </div>
       </article>
@@ -917,20 +177,13 @@
             <span class="case-label">Bahía Brands</span>
             <h3 data-lang="fr">Campagne froide pour une marque de branding</h3>
             <h3 data-lang="en">Cold campaign for a branding business</h3>
-
             <p data-lang="fr">Après plusieurs ajustements de message, une campagne à audience froide en Argentine a transformé un budget contrôlé en ventes directes mesurables. Le contexte local implique des coûts média plus bas qu'en Europe.</p>
             <p data-lang="en">After several message iterations, a cold-audience campaign in Argentina turned a controlled budget into measurable direct sales. The local market implies lower media costs than Europe.</p>
           </div>
 
           <div class="stats">
-            <div class="stat">
-              <strong>600 €</strong>
-              <span data-fr="budget investi" data-en="invested budget">budget investi</span>
-            </div>
-            <div class="stat">
-              <strong>6 400 €</strong>
-              <span data-fr="chiffre d'affaires" data-en="revenue">chiffre d'affaires</span>
-            </div>
+            <div class="stat"><strong>600 €</strong><span data-fr="budget investi" data-en="invested budget">budget investi</span></div>
+            <div class="stat"><strong>6 400 €</strong><span data-fr="chiffre d'affaires" data-en="revenue">chiffre d'affaires</span></div>
           </div>
         </div>
       </article>
@@ -941,28 +194,15 @@
             <span class="case-label">Bahía Brands</span>
             <h3 data-lang="fr">Lancement avec nutrition, retargeting et closing</h3>
             <h3 data-lang="en">Launch with nurture, retargeting and closing</h3>
-
             <p data-lang="fr">Un lancement de 3 mois avec attraction, communauté WhatsApp, retargeting, 6 webinars et séquences de vente. L'objectif initial n'a pas été atteint, mais le système a généré un volume important et un lancement rentable.</p>
             <p data-lang="en">A 3-month launch with acquisition, WhatsApp community, retargeting, 6 webinars and sales sequences. The initial target was not reached, but the system generated significant volume and a profitable launch.</p>
           </div>
 
           <div class="stats">
-            <div class="stat">
-              <strong>+2 800</strong>
-              <span data-fr="personnes dans le funnel" data-en="people in the funnel">personnes dans le funnel</span>
-            </div>
-            <div class="stat">
-              <strong>14</strong>
-              <span data-fr="places vendues" data-en="seats sold">places vendues</span>
-            </div>
-            <div class="stat">
-              <strong>2 150 €</strong>
-              <span data-fr="budget approximatif" data-en="approximate budget">budget approximatif</span>
-            </div>
-            <div class="stat">
-              <strong>8 400 €</strong>
-              <span data-fr="revenu généré" data-en="revenue generated">revenu généré</span>
-            </div>
+            <div class="stat"><strong>+2 800</strong><span data-fr="personnes dans le funnel" data-en="people in the funnel">personnes dans le funnel</span></div>
+            <div class="stat"><strong>14</strong><span data-fr="places vendues" data-en="seats sold">places vendues</span></div>
+            <div class="stat"><strong>2 150 €</strong><span data-fr="budget approximatif" data-en="approximate budget">budget approximatif</span></div>
+            <div class="stat"><strong>8 400 €</strong><span data-fr="revenu généré" data-en="revenue generated">revenu généré</span></div>
           </div>
         </div>
       </article>
@@ -972,10 +212,8 @@
       <div>
         <div class="eyebrow" data-lang="fr">Méthode</div>
         <div class="eyebrow" data-lang="en">Method</div>
-
         <h2 data-lang="fr">Je construis et je gère le système avec vous.</h2>
         <h2 data-lang="en">I build and manage the system with you.</h2>
-
         <p data-lang="fr">L'accompagnement couvre la stratégie, la mise en place, la gestion et l'optimisation continue. Vous obtenez une structure commerciale plus lisible, pas seulement des rapports.</p>
         <p data-lang="en">The engagement covers strategy, implementation, management and continuous optimisation. You get a clearer commercial structure, not just reports.</p>
       </div>
@@ -997,29 +235,16 @@
     <section class="section reveal" id="diagnostic">
       <div class="eyebrow" data-lang="fr">Calculateur rapide</div>
       <div class="eyebrow" data-lang="en">Quick calculator</div>
-
       <h2 data-lang="fr">Combien vaut un système plus prévisible?</h2>
       <h2 data-lang="en">What is a more predictable system worth?</h2>
-
       <p data-lang="fr">Estimez la valeur potentielle de quelques demandes qualifiées supplémentaires par mois.</p>
       <p data-lang="en">Estimate the potential value of a few additional qualified enquiries per month.</p>
 
       <div class="calculator">
         <div class="panel calc-form">
-          <label>
-            <span data-fr="Valeur moyenne d'un client" data-en="Average client value">Valeur moyenne d'un client</span>
-            <input id="avgValue" type="number" min="0" value="8000" />
-          </label>
-
-          <label>
-            <span data-fr="Demandes qualifiées supplémentaires par mois" data-en="Additional qualified enquiries per month">Demandes qualifiées supplémentaires par mois</span>
-            <input id="leads" type="number" min="0" value="6" />
-          </label>
-
-          <label>
-            <span data-fr="Taux de conversion estimé (%)" data-en="Estimated conversion rate (%)">Taux de conversion estimé (%)</span>
-            <input id="closeRate" type="number" min="0" max="100" value="15" />
-          </label>
+          <label><span data-fr="Valeur moyenne d'un client" data-en="Average client value">Valeur moyenne d'un client</span><input id="avgValue" type="number" min="0" value="8000" /></label>
+          <label><span data-fr="Demandes qualifiées supplémentaires par mois" data-en="Additional qualified enquiries per month">Demandes qualifiées supplémentaires par mois</span><input id="leads" type="number" min="0" value="6" /></label>
+          <label><span data-fr="Taux de conversion estimé (%)" data-en="Estimated conversion rate (%)">Taux de conversion estimé (%)</span><input id="closeRate" type="number" min="0" max="100" value="15" /></label>
         </div>
 
         <div class="calc-result">
@@ -1032,50 +257,12 @@
       </div>
     </section>
 
-    <section class="section reveal" id="a-propos">
-      <div class="about-grid">
-        <div>
-          <div class="eyebrow" data-lang="fr">À propos</div>
-          <div class="eyebrow" data-lang="en">About</div>
-
-          <h2 data-lang="fr">Une vision internationale, une approche humaine, un objectif simple.</h2>
-          <h2 data-lang="en">An international perspective, a human approach, one simple objective.</h2>
-
-          <p data-lang="fr">Né en Argentine, formé par plusieurs marchés, j'aide les entreprises de services à créer plus de liberté grâce à une acquisition plus prévisible. J'ai travaillé avec plus de 15 clients en Argentine, au Chili, en France, aux États-Unis, au Mexique, en Allemagne et en Italie.</p>
-          <p data-lang="en">Born in Argentina and shaped by several markets, I help service businesses create more freedom through more predictable acquisition. I have worked with more than 15 clients across Argentina, Chile, France, the United States, Mexico, Germany and Italy.</p>
-
-          <br />
-
-          <p data-lang="fr">Mon rôle est d'apporter une structure sérieuse, mais aussi une présence humaine. Je travaille avec des personnes, pas avec des tableaux abstraits.</p>
-          <p data-lang="en">My role is to bring serious structure, but also human presence. I work with people, not abstract dashboards.</p>
-        </div>
-
-        <aside class="about-card">
-          <h3 data-lang="fr">Un parcours construit entre plusieurs marchés</h3>
-          <h3 data-lang="en">A path built across several markets</h3>
-
-          <p data-lang="fr">Argentine, Mexique, France, Suisse et Allemagne. Cette trajectoire m'a donné une lecture plus globale des comportements d'achat, des messages et des systèmes commerciaux.</p>
-          <p data-lang="en">Argentina, Mexico, France, Switzerland and Germany. This path gave me a broader reading of buying behaviour, messaging and commercial systems.</p>
-
-          <div class="journey">
-            <span>Argentina</span>
-            <span>Mexico</span>
-            <span>France</span>
-            <span>Switzerland</span>
-            <span>Germany</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
     <section class="section full cta" id="contact">
       <div class="section reveal">
         <div class="eyebrow" data-lang="fr">Diagnostic privé</div>
         <div class="eyebrow" data-lang="en">Private diagnostic</div>
-
         <h2 data-lang="fr">Si votre entreprise dépend encore trop des recommandations, commençons par diagnostiquer le système.</h2>
         <h2 data-lang="en">If your business still depends too heavily on referrals, let us diagnose the system first.</h2>
-
         <p data-lang="fr">La consultation est gratuite. Je regarde votre situation, vos leviers actuels et votre potentiel d'acquisition. Si je pense pouvoir vous aider, je vous proposerai les prochaines étapes.</p>
         <p data-lang="en">The consultation is free. I will review your situation, current levers and acquisition potential. If I believe I can help, I will suggest the next steps.</p>
 
@@ -1091,90 +278,71 @@
   <footer>© 2026 Francisco Urrets Zavalia. Tous droits réservés.</footer>
 
   <script>
-    const buttons = document.querySelectorAll("[data-set-lang]");
-    const translated = document.querySelectorAll("[data-fr][data-en]");
-    const html = document.documentElement;
-    const savedLanguage = localStorage.getItem("site-language") || "fr";
+    const buttons=document.querySelectorAll("[data-set-lang]");
+    const translated=document.querySelectorAll("[data-fr][data-en]");
+    const html=document.documentElement;
+    const savedLanguage=localStorage.getItem("site-language")||"fr";
 
-    function setLanguage(lang) {
-      document.body.classList.toggle("lang-en", lang === "en");
-      html.lang = lang;
-      localStorage.setItem("site-language", lang);
-      buttons.forEach((button) => button.classList.toggle("active", button.dataset.setLang === lang));
-      translated.forEach((node) => {
-        node.textContent = node.dataset[lang];
-      });
+    function setLanguage(lang){
+      document.body.classList.toggle("lang-en",lang==="en");
+      html.lang=lang;
+      localStorage.setItem("site-language",lang);
+      buttons.forEach(button=>button.classList.toggle("active",button.dataset.setLang===lang));
+      translated.forEach(node=>{node.textContent=node.dataset[lang]});
     }
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
-    });
-
+    buttons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
     setLanguage(savedLanguage);
 
-    const header = document.querySelector("header");
+    const header=document.querySelector("header");
+    window.addEventListener("scroll",()=>{header?.classList.toggle("scrolled",window.scrollY>12)});
 
-    window.addEventListener("scroll", () => {
-      header?.classList.toggle("scrolled", window.scrollY > 12);
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
           entry.target.classList.add("visible");
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.16 });
+    },{threshold:.16});
 
-    document.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+    document.querySelectorAll(".reveal").forEach(node=>revealObserver.observe(node));
 
-    document.querySelectorAll("[data-count]").forEach((node) => {
-      const target = Number(node.dataset.count);
-      let started = false;
-
-      const observer = new IntersectionObserver((entries) => {
-        if (!entries[0].isIntersecting || started) return;
-        started = true;
-
-        const start = performance.now();
-        const duration = 1100;
-
-        function tick(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          node.textContent = Math.round(target * eased).toLocaleString("fr-FR");
-          if (progress < 1) requestAnimationFrame(tick);
+    document.querySelectorAll("[data-count]").forEach(node=>{
+      const target=Number(node.dataset.count);
+      let started=false;
+      const observer=new IntersectionObserver(entries=>{
+        if(!entries[0].isIntersecting||started)return;
+        started=true;
+        const start=performance.now();
+        const duration=1100;
+        function tick(now){
+          const progress=Math.min((now-start)/duration,1);
+          const eased=1-Math.pow(1-progress,3);
+          node.textContent=Math.round(target*eased).toLocaleString("fr-FR");
+          if(progress<1)requestAnimationFrame(tick);
         }
-
         requestAnimationFrame(tick);
         observer.disconnect();
-      }, { threshold: 0.55 });
-
+      },{threshold:.55});
       observer.observe(node);
     });
 
-    const avgValue = document.getElementById("avgValue");
-    const leads = document.getElementById("leads");
-    const closeRate = document.getElementById("closeRate");
-    const roiResult = document.getElementById("roiResult");
+    const avgValue=document.getElementById("avgValue");
+    const leads=document.getElementById("leads");
+    const closeRate=document.getElementById("closeRate");
+    const roiResult=document.getElementById("roiResult");
 
-    function updateCalculator() {
-      if (!avgValue || !leads || !closeRate || !roiResult) return;
-
-      const value = Number(avgValue.value) || 0;
-      const leadCount = Number(leads.value) || 0;
-      const rate = (Number(closeRate.value) || 0) / 100;
-      const result = Math.round(value * leadCount * rate);
-
-      roiResult.textContent = new Intl.NumberFormat("fr-FR", {
-        style: "currency",
-        currency: "EUR",
-        maximumFractionDigits: 0
-      }).format(result);
+    function updateCalculator(){
+      if(!avgValue||!leads||!closeRate||!roiResult)return;
+      const value=Number(avgValue.value)||0;
+      const leadCount=Number(leads.value)||0;
+      const rate=(Number(closeRate.value)||0)/100;
+      const result=Math.round(value*leadCount*rate);
+      roiResult.textContent=new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(result);
     }
 
-    [avgValue, leads, closeRate].forEach((input) => input?.addEventListener("input", updateCalculator));
+    [avgValue,leads,closeRate].forEach(input=>input?.addEventListener("input",updateCalculator));
     updateCalculator();
   </script>
 </body>

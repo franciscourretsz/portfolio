@@ -27,99 +27,32 @@
     .calculator{display:grid;grid-template-columns:minmax(0,.78fr) minmax(320px,.52fr);gap:34px;align-items:stretch;margin-top:34px}.calc-form{display:grid;gap:18px}label{color:var(--navy);display:grid;font-size:14px;font-weight:800;gap:8px}input{width:100%;border:1px solid rgba(11,31,51,.2);border-radius:3px;background:#fff;color:var(--ink);font:inherit;padding:14px}.calc-result{display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(184,155,94,.46);background:var(--navy);padding:32px}.calc-result p{color:#d9d2c3;margin-bottom:12px}.calc-result strong{color:var(--paper);font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,5vw,62px);font-weight:500;line-height:1}
     .cta{background:var(--navy);color:var(--paper);text-align:center}.cta h2{color:var(--paper);margin-left:auto;margin-right:auto}.cta p{max-width:720px;margin:0 auto 28px;color:#d9d2c3;font-size:18px}.cta .contact-actions{justify-content:center}.cta .btn{border-color:var(--gold);background:var(--gold);color:var(--ink)}.cta .btn.secondary{background:transparent;color:var(--paper)}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}footer{border-top:1px solid rgba(184,155,94,.28);color:var(--muted);font-size:13px;padding:30px 7vw;text-align:center}
+
+    .brand-intro{position:fixed;inset:0;z-index:999;display:grid;place-items:center;background:radial-gradient(circle at 50% 48%,rgba(184,155,94,.22),transparent 28%),linear-gradient(135deg,#f6f1e7 0%,#fffdf8 46%,#ebe1ce 100%);opacity:1;pointer-events:none;overflow:hidden;transition:opacity .85s ease,visibility .85s ease}
+    .brand-intro:before{content:"";position:absolute;width:54vw;max-width:760px;height:54vw;max-height:760px;border-radius:50%;background:radial-gradient(circle,rgba(184,155,94,.18),transparent 62%);filter:blur(20px);transform:translateX(-8%) scale(.92);animation:introLight 1.7s cubic-bezier(.2,.8,.2,1) both}
+    .brand-intro.hidden{opacity:0;visibility:hidden}.intro-mark{position:relative;width:220px;height:260px;display:grid;place-items:center;animation:introPresence 1.6s cubic-bezier(.2,.8,.2,1) both}
+    .intro-ring{position:absolute;top:0;width:204px;height:204px;border:1px solid rgba(184,155,94,.82);border-radius:50%;transform:scale(.76) rotate(-18deg);opacity:0;animation:ringReveal 1.25s cubic-bezier(.2,.8,.2,1) .12s both}
+    .intro-ring:before{content:"";position:absolute;inset:9px;border:1px solid rgba(11,31,51,.14);border-radius:50%}.intro-ring:after{content:"";position:absolute;left:50%;bottom:-34px;width:0;height:1px;background:rgba(184,155,94,.84);transform:translateX(-50%);animation:introLine .85s ease .76s both}
+    .intro-monogram{position:absolute;top:54px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:74px;font-weight:500;line-height:1;opacity:0;transform:translateY(10px);animation:monogramReveal .9s ease .52s both}
+    .intro-monogram:after{content:"Francisco Urrets";position:absolute;left:50%;top:128px;width:260px;transform:translateX(-50%);color:rgba(7,19,31,.72);font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:800;letter-spacing:2.8px;text-align:center;text-transform:uppercase;opacity:0;animation:introName .85s ease .92s both}
+    body.intro-lock{overflow:hidden}
+    @keyframes introLight{0%{opacity:0;transform:translateX(-10%) scale(.86)}100%{opacity:1;transform:translateX(0) scale(1)}}@keyframes ringReveal{0%{opacity:0;transform:scale(.76) rotate(-18deg)}100%{opacity:1;transform:scale(1) rotate(0)}}@keyframes introLine{0%{width:0;opacity:0}100%{width:112px;opacity:1}}@keyframes monogramReveal{0%{opacity:0;transform:translateY(10px);filter:blur(5px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}@keyframes introName{0%{opacity:0;transform:translateX(-50%) translateY(7px)}100%{opacity:1;transform:translateX(-50%) translateY(0)}}@keyframes introPresence{0%{transform:translateY(10px) scale(.96)}100%{transform:translateY(0) scale(1)}}
+
     [data-lang=en]{display:none}body.lang-en [data-lang=fr]{display:none}body.lang-en [data-lang=en]{display:revert}
-    @media(max-width:1050px){header{align-items:flex-start;flex-direction:column;gap:14px}nav{width:100%;flex-wrap:wrap;gap:14px}.hero,.intro-grid,.two-col,.calculator,.case-head{grid-template-columns:1fr}.hero{min-height:0}.portrait-wrap,.portrait-wrap img{min-height:0;height:620px}.system-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){header{padding:14px 18px}.brand{font-size:17px}nav a{font-size:12px}.language-switch{margin-left:auto}.section{padding:68px 20px}.hero{padding-top:40px}h1{font-size:42px}h2{font-size:34px}.lead{font-size:18px}.btn{width:100%}.portrait-wrap,.portrait-wrap img{height:520px}.proof-strip,.logo-strip,.system-grid,.stats{grid-template-columns:1fr}.panel,.case,.system-card,.calc-result{padding:24px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:1ms!important;scroll-behavior:auto!important;transition-duration:1ms!important}}
-  .brand-intro {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at center, rgba(184, 155, 94, 0.16), transparent 34%),
-    linear-gradient(135deg, #f6f1e7 0%, #fffdf8 48%, #ebe1ce 100%);
-  opacity: 1;
-  pointer-events: none;
-  transition: opacity 650ms ease, visibility 650ms ease;
-}
-
-.brand-intro.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.intro-mark {
-  position: relative;
-  width: 132px;
-  height: 132px;
-  display: grid;
-  place-items: center;
-  animation: introLift 1200ms cubic-bezier(.2, .8, .2, 1) both;
-}
-
-.intro-ring {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(184, 155, 94, 0.74);
-  border-radius: 50%;
-  transform: scale(0.78);
-  opacity: 0;
-  animation: ringReveal 1050ms cubic-bezier(.2, .8, .2, 1) both;
-}
-
-.intro-ring::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(11, 31, 51, 0.16);
-  border-radius: 50%;
-}
-
-.intro-monogram {
-  color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 48px;
-  font-weight: 500;
-  letter-spacing: 0;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: monogramReveal 900ms ease 220ms both;
-}
-
-@keyframes ringReveal {
-  0% { opacity: 0; transform: scale(0.78) rotate(-16deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-
-@keyframes monogramReveal {
-  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
-
-@keyframes introLift {
-  0% { transform: translateY(10px) scale(0.96); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-body.intro-lock {
-  overflow: hidden;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand-intro {
-    display: none;
-  }
-}
+    @media(max-width:1050px){header{align-items:flex-start;flex-direction:column;gap:14px}nav{width:100%;flex-wrap:wrap;gap:14px}.hero,.intro-grid,.two-col,.calculator,.case-head{grid-template-columns:1fr}.hero{min-height:0}.portrait-wrap,.portrait-wrap img{min-height:0;height:620px}.system-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){header{padding:14px 18px}.brand{font-size:17px}nav a{font-size:12px}.language-switch{margin-left:auto}.section{padding:68px 20px}.hero{padding-top:40px}h1{font-size:42px}h2{font-size:34px}.lead{font-size:18px}.btn{width:100%}.portrait-wrap,.portrait-wrap img{height:520px}.proof-strip,.logo-strip,.system-grid,.stats{grid-template-columns:1fr}.panel,.case,.system-card,.calc-result{padding:24px}.intro-mark{width:190px;height:236px}.intro-ring{width:178px;height:178px}.intro-monogram{top:48px;font-size:64px}.intro-monogram:after{top:116px;font-size:11px;letter-spacing:2.2px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:1ms!important;scroll-behavior:auto!important;transition-duration:1ms!important}.brand-intro{display:none}}
   </style>
 </head>
 
 <body>
   <div class="brand-intro" id="brandIntro" aria-hidden="true">
-  <div class="intro-mark">
-    <div class="intro-ring"></div>
-    <div class="intro-monogram">FU</div>
+    <div class="intro-mark">
+      <div class="intro-ring"></div>
+      <div class="intro-monogram">FU</div>
+    </div>
   </div>
-</div>
+
   <header>
     <a class="brand" href="./">Francisco Urrets</a>
     <nav aria-label="Navigation principale">
@@ -141,37 +74,22 @@ body.intro-lock {
       <div class="reveal">
         <div class="eyebrow" data-lang="fr">Architecte de systèmes d'acquisition</div>
         <div class="eyebrow" data-lang="en">Client acquisition systems architect</div>
-
         <h1 data-lang="fr">Un système prévisible pour générer des demandes qualifiées sans dépendre du bouche-à-oreille.</h1>
         <h1 data-lang="en">A predictable system to generate qualified enquiries without depending on referrals.</h1>
-
         <p class="lead" data-lang="fr">J'aide les cabinets d'architecture, les marques de design et les entreprises de services premium à transformer leur réputation en un moteur d'acquisition clair, mesurable et pilotable.</p>
         <p class="lead" data-lang="en">I help architecture studios, design brands and premium service businesses turn reputation into a clear, measurable and manageable acquisition engine.</p>
-
         <div class="hero-actions">
           <a class="btn" href="https://calendly.com/franciscourretsz/30min" target="_blank" rel="noopener" data-fr="Demander un diagnostic privé" data-en="Request a private diagnostic">Demander un diagnostic privé</a>
           <a class="btn secondary" href="#resultats" data-fr="Voir les résultats" data-en="View results">Voir les résultats</a>
         </div>
-
         <div class="capacity" data-lang="fr">2 nouveaux accompagnements disponibles actuellement.</div>
         <div class="capacity" data-lang="en">Currently available for 2 new advisory and implementation clients.</div>
-
         <div class="proof-strip">
-          <div class="proof-item">
-            <strong data-count="202">202</strong>
-            <span data-fr="conversations générées pour ARP en mars" data-en="conversations generated for ARP in March">conversations générées pour ARP en mars</span>
-          </div>
-          <div class="proof-item">
-            <strong>+65%</strong>
-            <span data-fr="demandes qualifiées dans un système actif" data-en="qualified enquiries in an active system">demandes qualifiées dans un système actif</span>
-          </div>
-          <div class="proof-item">
-            <strong>FR / EN</strong>
-            <span data-fr="vision internationale" data-en="international perspective">vision internationale</span>
-          </div>
+          <div class="proof-item"><strong data-count="202">202</strong><span data-fr="conversations générées pour ARP en mars" data-en="conversations generated for ARP in March">conversations générées pour ARP en mars</span></div>
+          <div class="proof-item"><strong>+65%</strong><span data-fr="demandes qualifiées dans un système actif" data-en="qualified enquiries in an active system">demandes qualifiées dans un système actif</span></div>
+          <div class="proof-item"><strong>FR / EN</strong><span data-fr="vision internationale" data-en="international perspective">vision internationale</span></div>
         </div>
       </div>
-
       <figure class="portrait-wrap reveal">
         <img src="francisco-speaking.png" alt="Francisco Urrets speaking on stage" />
       </figure>
@@ -186,7 +104,6 @@ body.intro-lock {
         <p data-lang="fr">Les recommandations sont précieuses, mais elles arrivent quand elles arrivent. Pour un cabinet ou une entreprise de services à forte valeur, cette dépendance crée un coût invisible: les bons clients ne vous découvrent pas au bon moment.</p>
         <p data-lang="en">Referrals are valuable, but they arrive when they arrive. For a studio or high-value service company, that dependency creates an invisible cost: the right clients do not discover you at the right time.</p>
       </div>
-
       <aside class="panel">
         <h3 data-lang="fr">Signes que le système manque</h3>
         <h3 data-lang="en">Signs the system is missing</h3>
@@ -209,7 +126,6 @@ body.intro-lock {
         <h2 data-lang="en">An acquisition architecture, not a collection of marketing activities.</h2>
         <p data-lang="fr">Le but n'est pas de faire plus de bruit. Le but est de concevoir un chemin clair entre une personne qui ne vous connaît pas encore et une demande qualifiée avec un vrai potentiel commercial.</p>
         <p data-lang="en">The goal is not to make more noise. The goal is to design a clear path between someone who does not know you yet and a qualified enquiry with real commercial potential.</p>
-
         <div class="system-grid">
           <article class="system-card"><span>01</span><h3 data-lang="fr">Positionnement</h3><h3 data-lang="en">Positioning</h3><p data-lang="fr">Clarifier l'offre, le client idéal, les objections et la valeur économique du problème.</p><p data-lang="en">Clarify the offer, ideal client, objections and economic value of the problem.</p></article>
           <article class="system-card"><span>02</span><h3 data-lang="fr">Message</h3><h3 data-lang="en">Message</h3><p data-lang="fr">Transformer votre expertise en angles simples, crédibles et compréhensibles par un décideur.</p><p data-lang="en">Turn your expertise into simple, credible angles a decision-maker can understand.</p></article>
@@ -224,7 +140,6 @@ body.intro-lock {
       <div class="eyebrow" data-lang="en">Selected collaborations</div>
       <h2 data-lang="fr">Des projets construits avec des marques de services, d'architecture et de design.</h2>
       <h2 data-lang="en">Work built with service, architecture and design brands.</h2>
-
       <div class="logo-strip">
         <div class="logo-item"><span class="logo-word">ARP</span></div>
         <div class="logo-item"><span class="logo-word">Bahía Brands</span></div>
@@ -248,7 +163,6 @@ body.intro-lock {
             <p data-lang="fr">Construction d'un système commercial capable de générer du volume depuis les réseaux sociaux et les messages directs, dans un secteur où la publicité est souvent perçue comme peu adaptée aux services à forte valeur.</p>
             <p data-lang="en">Commercial system built to generate volume from social channels and direct messages, in an industry where advertising is often seen as unsuitable for high-value services.</p>
           </div>
-
           <div class="stats">
             <div class="stat"><strong data-count="202">202</strong><span data-fr="conversations en mars" data-en="March conversations">conversations en mars</span></div>
             <div class="stat"><strong>+65%</strong><span data-fr="demandes qualifiées" data-en="qualified enquiries">demandes qualifiées</span></div>
@@ -267,7 +181,6 @@ body.intro-lock {
             <p data-lang="fr">Après plusieurs ajustements de message, une campagne à audience froide en Argentine a transformé un budget contrôlé en ventes directes mesurables. Le contexte local implique des coûts média plus bas qu'en Europe.</p>
             <p data-lang="en">After several message iterations, a cold-audience campaign in Argentina turned a controlled budget into measurable direct sales. The local market implies lower media costs than Europe.</p>
           </div>
-
           <div class="stats">
             <div class="stat"><strong>600 €</strong><span data-fr="budget investi" data-en="invested budget">budget investi</span></div>
             <div class="stat"><strong>6 400 €</strong><span data-fr="chiffre d'affaires" data-en="revenue">chiffre d'affaires</span></div>
@@ -284,7 +197,6 @@ body.intro-lock {
             <p data-lang="fr">Un lancement de 3 mois avec attraction, communauté WhatsApp, retargeting, 6 webinars et séquences de vente. L'objectif initial n'a pas été atteint, mais le système a généré un volume important et un lancement rentable.</p>
             <p data-lang="en">A 3-month launch with acquisition, WhatsApp community, retargeting, 6 webinars and sales sequences. The initial target was not reached, but the system generated significant volume and a profitable launch.</p>
           </div>
-
           <div class="stats">
             <div class="stat"><strong>+2 800</strong><span data-fr="personnes dans le funnel" data-en="people in the funnel">personnes dans le funnel</span></div>
             <div class="stat"><strong>14</strong><span data-fr="places vendues" data-en="seats sold">places vendues</span></div>
@@ -304,7 +216,6 @@ body.intro-lock {
         <p data-lang="fr">L'accompagnement couvre la stratégie, la mise en place, la gestion et l'optimisation continue. Vous obtenez une structure commerciale plus lisible, pas seulement des rapports.</p>
         <p data-lang="en">The engagement covers strategy, implementation, management and continuous optimisation. You get a clearer commercial structure, not just reports.</p>
       </div>
-
       <aside class="panel dark-panel">
         <h3 data-lang="fr">Ce qui est inclus</h3>
         <h3 data-lang="en">What is included</h3>
@@ -326,14 +237,12 @@ body.intro-lock {
       <h2 data-lang="en">What is a more predictable system worth?</h2>
       <p data-lang="fr">Estimez la valeur potentielle de quelques demandes qualifiées supplémentaires par mois.</p>
       <p data-lang="en">Estimate the potential value of a few additional qualified enquiries per month.</p>
-
       <div class="calculator">
         <div class="panel calc-form">
           <label><span data-fr="Valeur moyenne d'un client" data-en="Average client value">Valeur moyenne d'un client</span><input id="avgValue" type="number" min="0" value="8000" /></label>
           <label><span data-fr="Demandes qualifiées supplémentaires par mois" data-en="Additional qualified enquiries per month">Demandes qualifiées supplémentaires par mois</span><input id="leads" type="number" min="0" value="6" /></label>
           <label><span data-fr="Taux de conversion estimé (%)" data-en="Estimated conversion rate (%)">Taux de conversion estimé (%)</span><input id="closeRate" type="number" min="0" max="100" value="15" /></label>
         </div>
-
         <div class="calc-result">
           <p data-lang="fr">Valeur mensuelle potentielle</p>
           <p data-lang="en">Potential monthly value</p>
@@ -352,7 +261,6 @@ body.intro-lock {
         <h2 data-lang="en">If your business still depends too heavily on referrals, let us diagnose the system first.</h2>
         <p data-lang="fr">La consultation est gratuite. Je regarde votre situation, vos leviers actuels et votre potentiel d'acquisition. Si je pense pouvoir vous aider, je vous proposerai les prochaines étapes.</p>
         <p data-lang="en">The consultation is free. I will review your situation, current levers and acquisition potential. If I believe I can help, I will suggest the next steps.</p>
-
         <div class="contact-actions">
           <a class="btn" href="https://calendly.com/franciscourretsz/30min" target="_blank" rel="noopener" data-fr="Réserver le diagnostic" data-en="Book the diagnostic">Réserver le diagnostic</a>
           <a class="btn secondary" href="mailto:contact@franciscourrets.com">Email</a>
@@ -431,28 +339,25 @@ body.intro-lock {
 
     [avgValue,leads,closeRate].forEach(input=>input?.addEventListener("input",updateCalculator));
     updateCalculator();
-  (function () {
-  const intro = document.getElementById("brandIntro");
-  if (!intro) return;
 
-  const alreadySeen = sessionStorage.getItem("fu-intro-seen");
-
-  if (alreadySeen) {
-    intro.remove();
-    return;
-  }
-
-  document.body.classList.add("intro-lock");
-  sessionStorage.setItem("fu-intro-seen", "true");
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      intro.classList.add("hidden");
-      document.body.classList.remove("intro-lock");
-      setTimeout(() => intro.remove(), 700);
-    }, 1150);
-  });
-})();
+    (function(){
+      const intro=document.getElementById("brandIntro");
+      if(!intro)return;
+      const alreadySeen=sessionStorage.getItem("fu-intro-seen");
+      if(alreadySeen){
+        intro.remove();
+        return;
+      }
+      document.body.classList.add("intro-lock");
+      sessionStorage.setItem("fu-intro-seen","true");
+      window.addEventListener("load",()=>{
+        setTimeout(()=>{
+          intro.classList.add("hidden");
+          document.body.classList.remove("intro-lock");
+          setTimeout(()=>intro.remove(),900);
+        },1650);
+      });
+    })();
   </script>
 </body>
 </html>

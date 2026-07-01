@@ -29,10 +29,97 @@
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}footer{border-top:1px solid rgba(184,155,94,.28);color:var(--muted);font-size:13px;padding:30px 7vw;text-align:center}
     [data-lang=en]{display:none}body.lang-en [data-lang=fr]{display:none}body.lang-en [data-lang=en]{display:revert}
     @media(max-width:1050px){header{align-items:flex-start;flex-direction:column;gap:14px}nav{width:100%;flex-wrap:wrap;gap:14px}.hero,.intro-grid,.two-col,.calculator,.case-head{grid-template-columns:1fr}.hero{min-height:0}.portrait-wrap,.portrait-wrap img{min-height:0;height:620px}.system-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){header{padding:14px 18px}.brand{font-size:17px}nav a{font-size:12px}.language-switch{margin-left:auto}.section{padding:68px 20px}.hero{padding-top:40px}h1{font-size:42px}h2{font-size:34px}.lead{font-size:18px}.btn{width:100%}.portrait-wrap,.portrait-wrap img{height:520px}.proof-strip,.logo-strip,.system-grid,.stats{grid-template-columns:1fr}.panel,.case,.system-card,.calc-result{padding:24px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:1ms!important;scroll-behavior:auto!important;transition-duration:1ms!important}}
+  .brand-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, rgba(184, 155, 94, 0.16), transparent 34%),
+    linear-gradient(135deg, #f6f1e7 0%, #fffdf8 48%, #ebe1ce 100%);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 650ms ease, visibility 650ms ease;
+}
+
+.brand-intro.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-mark {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  display: grid;
+  place-items: center;
+  animation: introLift 1200ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.intro-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(184, 155, 94, 0.74);
+  border-radius: 50%;
+  transform: scale(0.78);
+  opacity: 0;
+  animation: ringReveal 1050ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.intro-ring::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(11, 31, 51, 0.16);
+  border-radius: 50%;
+}
+
+.intro-monogram {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: monogramReveal 900ms ease 220ms both;
+}
+
+@keyframes ringReveal {
+  0% { opacity: 0; transform: scale(0.78) rotate(-16deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes monogramReveal {
+  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes introLift {
+  0% { transform: translateY(10px) scale(0.96); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+body.intro-lock {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-intro {
+    display: none;
+  }
+}
   </style>
 </head>
 
 <body>
+  <div class="brand-intro" id="brandIntro" aria-hidden="true">
+  <div class="intro-mark">
+    <div class="intro-ring"></div>
+    <div class="intro-monogram">FU</div>
+  </div>
+</div>
   <header>
     <a class="brand" href="./">Francisco Urrets</a>
     <nav aria-label="Navigation principale">
@@ -344,6 +431,28 @@
 
     [avgValue,leads,closeRate].forEach(input=>input?.addEventListener("input",updateCalculator));
     updateCalculator();
+  (function () {
+  const intro = document.getElementById("brandIntro");
+  if (!intro) return;
+
+  const alreadySeen = sessionStorage.getItem("fu-intro-seen");
+
+  if (alreadySeen) {
+    intro.remove();
+    return;
+  }
+
+  document.body.classList.add("intro-lock");
+  sessionStorage.setItem("fu-intro-seen", "true");
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      intro.classList.add("hidden");
+      document.body.classList.remove("intro-lock");
+      setTimeout(() => intro.remove(), 700);
+    }, 1150);
+  });
+})();
   </script>
 </body>
 </html>
